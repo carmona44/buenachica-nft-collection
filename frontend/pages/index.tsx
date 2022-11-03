@@ -74,7 +74,7 @@ export default function Home() {
             await checkIfPresaleStarted();
         } catch (err) {
             console.error(err);
-        }
+        } setPresaleStarted
     };
 
     const checkIfPresaleStarted = async () => {
@@ -248,7 +248,7 @@ export default function Home() {
     };
 
     const renderMintedCount = () => {
-        if (walletConnected) {
+        if (walletConnected && presaleStarted) {
             return (
                 <div className={styles.description}>
                     {tokenIdsMinted}/4 han sido minteados.
@@ -268,10 +268,15 @@ export default function Home() {
                 <div className={styles.content}>
                     <h1 className={styles.title}>¡Bienvenido a la colección NFT BuenaChica 🐶!</h1>
                     <div className={styles.description}>
+                        Como ya comentamos en el lanzamiento de la Whitelist,
                         BuenaChica 🐶 es una colección de NFTs que hace referencia
                         a una gran mascota y que es símbolo de una gran amistad.
                         Los holders de estos NFTs podrán participar en nuestra próxima ICO
                         y en las votaciones de la DAO llamada voDkAO.
+                        <br></br>
+                        <br></br>
+                        Por fin ha llegado el momento de CONSEGUIRLOS. Si te apuntaste a la Whitelist
+                        participa en la preventa y si no... puedes participar en la ¡venta pública!
                     </div>
                     {renderMintedCount()}
                     {renderButton()}
@@ -284,6 +289,6 @@ export default function Home() {
             <footer className={styles.footer}>
                 Made with ❤️ by Carmona44
             </footer>
-        </div>
+        </div >
     );
 }
