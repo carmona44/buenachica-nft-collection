@@ -11,7 +11,6 @@ async function main() {
     const deployedBuenaChicaContract = await buenaChicaContract.deploy(metadataURL, whitelistContract);
 
     console.log("BuenaChica Contract Address:", deployedBuenaChicaContract.address);
-    //BuenaChica Contract Address: 0x0121bced84036578e22066712E720Cb894dF4983
 
 }
 
