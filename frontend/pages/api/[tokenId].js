@@ -4,7 +4,7 @@ export default function handler(req, res) {
 
     res.status(200).json({
         name: "BuenaChica #" + tokenId,
-        description: "Crypto Dev is a collection of developers in cryptoBuenaChica 🐶 es una colección de NFTs para un grupo de amigos",
+        description: "BuenaChica 🐶 es una colección de NFTs para un grupo de amigos",
         image: image_url + tokenId + ".png",
     });
 }
