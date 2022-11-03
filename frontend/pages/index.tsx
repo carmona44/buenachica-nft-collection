@@ -14,7 +14,7 @@ export default function Home() {
     const [isOwner, setIsOwner] = useState(false);
     const [tokenIdsMinted, setTokenIdsMinted] = useState("0");
 
-    const web3ModalRef = useRef();
+    const web3ModalRef: any = useRef();
 
     const presaleMint = async () => {
         try {
@@ -120,13 +120,13 @@ export default function Home() {
             const provider = await getProviderOrSigner();
             const nftContract = new Contract(NFT_CONTRACT_ADDRESS, abi, provider);
             const _owner = await nftContract.owner();
-            const signer = await getProviderOrSigner(true);
+            const signer: any = await getProviderOrSigner(true);
             const address = await signer.getAddress();
 
             if (address.toLowerCase() === _owner.toLowerCase()) {
                 setIsOwner(true);
             }
-        } catch (err) {
+        } catch (err: any) {
             console.error(err.message);
         }
     };
@@ -173,6 +173,7 @@ export default function Home() {
             connectWallet();
 
             const _presaleStarted = checkIfPresaleStarted();
+            // @ts-ignore
             if (_presaleStarted) {
                 checkIfPresaleEnded();
             }
